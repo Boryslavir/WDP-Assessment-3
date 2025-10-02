@@ -108,3 +108,7 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+
+# Other folder ingores
+*.db
