@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "gAv2nxMR4cM=",
+  "success": true,
+  "projectFilePath": "/home/deepindark/Documents/Uni/UC (2nd Year - 1st Semester)/WDP/Assessment/Assessment 3/WDP-Assessment-3/WDP-Assessment-3.csproj",
+  "expectedPackageFiles": [
+    "/home/deepindark/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.9/microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}
