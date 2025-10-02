@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WDP-Assessment-3")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a1b721aeed339916e384f5bdff965fc9904c5fa")]
 [assembly: System.Reflection.AssemblyProductAttribute("WDP-Assessment-3")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WDP-Assessment-3")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
