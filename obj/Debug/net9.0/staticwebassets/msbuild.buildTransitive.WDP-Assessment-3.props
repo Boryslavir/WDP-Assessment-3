@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../buildMultiTargeting/WDP-Assessment-3.props" />
-</Project>
