@@ -45,6 +45,7 @@ body {
 #header-content,
 #body-description,
 #body-card,
+#body-prompt,
 #footer-content {
     color: white;
 }
@@ -82,4 +83,8 @@ body {
 #body-card #body-dalle-card p,
 #body-card #body-midjourney-card p {
     background-color: coral;
+}
+
+#body-prompt a {
+    text-decoration: none;
 }
