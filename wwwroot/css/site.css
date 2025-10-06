@@ -36,17 +36,50 @@ body {
     text-align: start;
 }
 
-#home-page {
+#general-body-element {
     background-image: url('./../img/home-background.webp');
+    max-width: 100%;
+    height: auto;
 }
 
-#home-page .header-content {
+#header-content,
+#body-description,
+#body-card,
+#footer-content {
+    color: white;
+}
+
+#header-content,
+#footer-content {
     font-family: 'Anton', sans-serif;
+}
+
+#header-content {
     font-size: 2.5rem;
 }
 
-#home-page .body-content,
-#home-page .footer-content {
+#body-description,
+#body-card {
     font-family: 'Monsterrat', sans-serif;
     padding: 2vw;
+}
+
+#body-card #body-info p {
+    color: coral;
+}
+
+#body-card img {
+    width: 100%;
+    max-width: 1080px;
+    height: auto;
+}
+
+#body-card #body-info,
+#body-card img {
+    border: 0.05rem solid white;
+}
+
+#body-card #body-dalle-card p,
+#body-card #body-midjourney-card p {
+    background-color: coral;
 }

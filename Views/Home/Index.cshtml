@@ -2,25 +2,49 @@
 ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center text-white" id="home-page">
-    <section class="header-content">
-        <h1>Generative Artificial Intelligence (Gen AI)</h1>
-    </section>
+<div class="d-flex flex-row justify-content-center flex-wrap" id="header-content">
+    <h1>Generative Artificial Intelligence (Gen AI)</h1>
+</div>
 
-    <section class="body-content">
-        <p>
+<div class="d-flex flex-column flex-wrap">
+    <div class="d-flex flex-column align-items-center" id="body-description">
+        <div class="text-center">
             Gen AI is AI-capable of generating text, images, videos, or other data using generative models, often in
             response to prompts. These models learn the patterns and structure of their input training data and then
-            generate new data that has similar characteristics.
-        </p>
-        <p><i>Wikipedia</i></p>
-    </section>
+            generate new data that has similar characteristics.<br />
+            <em>Wikipedia</em>
+        </div>
+    </div>
 
-    <section class="footer-content">
-        <a
-            href="http://blv.fih.mybluehost.me/artificial-intelligence/ai-for-nlp/artificial-intelligence-visual-art-redefining-creativity/">
-            Image Source: (Sami, 2023)
-        </a>
+    <div class="d-flex flex-row justify-content-evenly" id="body-card">
+        <div class="d-flex flex-column align-items-center justify-content-center" id="body-info">
+            <h2>AI Creative Art</h2>
+            <p>Euismod, viverra efficitur odio, elementum tempor vitae tempus habitasse elementum.</p>
+            <p>Read More</p> <!-- TODO: click button event by JS here -->
+        </div>
 
-    </section>
+        <div class="d-flex flex-column px-5" id="body-dalle-card">
+            <img src="/img/dalle.webp" alt="DALL-E Logo" />
+        </div>
+
+        <div class="d-flex flex-column" id="body-midjourney-card">
+            <img src="/img/midjourney.webp" alt="MidJourney Logo" />
+        </div>
+    </div>
+</div>
+
+<div class="d-flex flex-row justify-content-evenly align-items-center flex-wrap" id="footer-content">
+    <a
+        href="http://blv.fih.mybluehost.me/artificial-intelligence/ai-for-nlp/artificial-intelligence-visual-art-redefining-creativity/">
+        Background source: (Sami, 2023)
+    </a>
+
+    <a href="https://aipure.ai/it/articles/dall-e-3-review-revolutionizing-ai-image-generation">
+        1st AI Image Source: (Dickson, 2024)
+    </a>
+
+    <a
+        href="https://www.sdpnoticias.com/tecnologia/midjourney-ya-no-es-gratis-esta-seria-la-razon-por-la-que-ahora-pagas-por-usar-inteligencia-artificial/">
+        2nd AI Image Source: (Luices, 2023)
+    </a>
 </div>
