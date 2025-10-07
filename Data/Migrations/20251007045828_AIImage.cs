@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace WDP_Assessment_3.Migrations
+namespace WDP_Assessment_3.Data.Migrations
 {
     /// <inheritdoc />
     public partial class AIImage : Migration

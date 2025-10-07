@@ -1,16 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using WDP_Assessment_3.Models;
 
-    public class ApplicationDbContext : DbContext
-    {
-        public ApplicationDbContext (DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-        }
+namespace WDP_Assessment_3.Data;
 
-        public DbSet<WDP_Assessment_3.Models.AIImage> AIImage { get; set; } = default!;
+public class ApplicationDbContext : IdentityDbContext
+{
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options)
+    {
     }
+
+public DbSet<WDP_Assessment_3.Models.AIImage> AIImage { get; set; } = default!;
+}

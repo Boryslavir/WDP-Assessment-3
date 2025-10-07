@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using WDP_Assessment_3.Data;
 using WDP_Assessment_3.Models;
 
 namespace WDP_Assessment_3.Controllers
