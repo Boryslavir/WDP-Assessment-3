@@ -8,6 +8,9 @@ using Microsoft.EntityFrameworkCore;
 using WDP_Assessment_3.Data;
 using WDP_Assessment_3.Models;
 
+// For authorisation validation
+using Microsoft.AspNetCore.Authorization;
+
 namespace WDP_Assessment_3.Controllers
 {
     public class AIImageController : Controller
@@ -44,6 +47,7 @@ namespace WDP_Assessment_3.Controllers
         }
 
         // GET: AIImage/Create
+        [Authorize(Roles = "admin, user")]
         public IActionResult Create()
         {
             return View();
@@ -54,6 +58,7 @@ namespace WDP_Assessment_3.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin, user")]
         public async Task<IActionResult> Create([Bind("Id,Prompt,ImageGenerator,UploadDate,Filename,Like,canIncreaseLike")] AIImage aIImage)
         {
             if (ModelState.IsValid)
