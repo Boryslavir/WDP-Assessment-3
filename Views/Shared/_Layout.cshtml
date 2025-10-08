@@ -51,7 +51,7 @@
     Microsoft approach it, meh...)
 -->
     <div class="container-fluid" id="general-body-element">
-        <main role="main">
+        <main role="main" class="text-light">
             @RenderBody()
         </main>
     </div>
@@ -85,7 +85,7 @@
         crossorigin="anonymous"></script>
 
     <!-- Custom JS for some unique pages -->
-    <!-- <script src="~/js/site.js" asp-append-version="true"></script> -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

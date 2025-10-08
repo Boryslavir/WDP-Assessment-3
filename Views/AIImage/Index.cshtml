@@ -11,8 +11,9 @@
         </div>
 
         @foreach (var item in Model) {
-        <div class="bg-success">
-            <a asp-action="Details" asp-route-id="@item.Id">
+        <div class="d-inline-flex flex-row justify-contents-evenly flex-wrap py-5">
+            <a asp-action="Details" asp-route-id="@item.Id"
+                class="text-info text-center border border-light border-3 rounded-3 p-5 bg-dark">
                 @Html.DisplayFor(modelItem => item.ImageGenerator)
             </a>
         </div>
