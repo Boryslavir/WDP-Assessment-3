@@ -71,6 +71,7 @@ namespace WDP_Assessment_3.Controllers
         }
 
         // GET: AIImage/Edit/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -91,6 +92,7 @@ namespace WDP_Assessment_3.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Prompt,ImageGenerator,UploadDate,Filename,Like,canIncreaseLike")] AIImage aIImage)
         {
             if (id != aIImage.Id)
@@ -122,6 +124,7 @@ namespace WDP_Assessment_3.Controllers
         }
 
         // GET: AIImage/Delete/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -142,6 +145,7 @@ namespace WDP_Assessment_3.Controllers
         // POST: AIImage/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var aIImage = await _context.AIImage.FindAsync(id);
