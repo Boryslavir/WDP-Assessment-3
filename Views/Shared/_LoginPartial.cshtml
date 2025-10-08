@@ -2,26 +2,44 @@
 @inject SignInManager<IdentityUser> SignInManager
     @inject UserManager<IdentityUser> UserManager
 
+        @if (SignInManager.IsSignedIn(User))
+        {
+        <div class="d-flex flex-row justify-content-center">
+            <a class="navbar-brand text-dark-emphasis mx-3" asp-area="Identity" asp-page="/Account/Manage/Index"
+                title="Manage">
+                Hello @User.Identity?.Name!
+            </a>
+            @{
+            var homePageUrl = Url.Action("Index", "Home", new { area = "" });
+            }
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@homePageUrl">
+                <button type="submit" class="nav-brand text-dark-emphasis mx-3">
+                    Logout
+                </button>
+            </form>
+        </div>
+
         <ul class="navbar-nav">
-            @if (SignInManager.IsSignedIn(User))
-            {
             <li class="nav-item">
                 <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello
                     @User.Identity?.Name!</a>
             </li>
             <li class="nav-item">
-		    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
+                    asp-route-returnUrl="@Url.Action(" Index", "Home" , new { area="" })">
                     <button type="submit" class="nav-link btn btn-link text-light">Logout</button>
                 </form>
             </li>
-            }
-            else
-            {
-            <li class="nav-item">
-                <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">Register</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">Login</a>
-            </li>
-            }
         </ul>
+        }
+        else
+        {
+        <div class="d-flex flex-row justify-content-center">
+            <a class="navbar-brand text-dark-emphasis mx-3" asp-area="Identity" asp-page="/Account/Register">
+                Register
+            </a>
+            <a class="navbar-brand text-dark-emphasis mx-3" asp-area="Identity" asp-page="/Account/Login">
+                Login
+            </a>
+        </div>
+        }

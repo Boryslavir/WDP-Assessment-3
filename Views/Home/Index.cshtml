@@ -2,75 +2,77 @@
 ViewData["Title"] = "Home Page";
 }
 
-<div class="d-flex flex-row justify-content-center flex-wrap" id="header-content">
-    <h1>Generative Artificial Intelligence (Gen AI)</h1>
+<div class="d-flex flex-column align-items-center text-light text-center" id="home-page-body-header">
+    <h1 class="pt-3">Generative Artificial Intelligence (Gen AI)</h1>
+    <p class="py-3">
+        Artificial intelligence visual art, or AI art, is visual artwork
+        generated (or enhanced) through the use of artificial intelligence (AI)
+        programs. Automated art has been created since ancient times. The field
+        of artificial intelligence was founded in the 1950s, and artists began
+        to create art with artificial intelligence shortly after the discipline
+        was founded.
+    </p>
+    <a href="https://en.wikipedia.org/wiki/Artificial_intelligence_visual_art"
+        class="fst-italic text-decoration-none text-info pb-5">
+        (Wikipedia contributors, 2025)
+    </a>
 </div>
 
-<div class="d-flex flex-column flex-wrap">
-    <div class="d-flex flex-column align-items-center" id="body-description">
-        <div class="text-center">
-            Gen AI is AI-capable of generating text, images, videos, or other data using generative models, often in
-            response to prompts. These models learn the patterns and structure of their input training data and then
-            generate new data that has similar characteristics.<br />
-            <em>Wikipedia</em>
-        </div>
+<div class="d-flex flex-row justify-content-evenly text-light" id="home-page-body-first-middle">
+    <div class="d-flex flex-column border border-light border-3 rounded-3 px-3 bg-dark flex-grow-1" id="dalle-info">
+        <h2 class="text-center pt-3">DALL-E 3</h2>
+        <p class="text-start text-wrap py-3 flex-grow-1">
+            In varius curabitur, integer vulputate habitasse nam volutpat tempor
+            diam consectetur amet. Vestibulum lorem, consequat lectus, elementum
+            massa donec ut.
+        </p>
+        <a href="https://openai.com/index/dall-e-3/" class="text-end text-decoration-none text-info pb-3">
+            Read More
+        </a>
     </div>
 
-    <div class="d-flex flex-row justify-content-evenly" id="body-card">
-        <div class="d-flex flex-column align-items-center justify-content-center" id="body-info">
-            <h2>AI Creative Art</h2>
-            <p>Euismod, viverra efficitur odio, elementum tempor vitae tempus habitasse elementum.</p>
-            <p>Read More</p> <!-- TODO: click button event by JS here -->
-        </div>
+    <img src="/img/dalle.webp" alt="DALL-E Logo" class="px-3" id="dalle-card" />
+    <img src="/img/midjourney.webp" alt="Mid Journey Logo" id="dalle-card" />
+</div>
 
-        <div class="d-flex flex-column px-5" id="body-dalle-card">
-            <img src="/img/dalle.webp" alt="DALL-E Logo" />
-        </div>
+<div class="d-flex flex-row justify-content-evenly text-light py-5" id="home-page-body-second-middle">
+    <img src="/img/midjourney.webp" alt="Mid Journey Logo" id="mid-journey-card" />
 
-        <div class="d-flex flex-column" id="body-midjourney-card">
-            <img src="/img/midjourney.webp" alt="MidJourney Logo" />
-        </div>
+    <div class="d-flex flex-column border border-light border-3 rounded-3 px-3 bg-dark flex-grow-1 mx-3"
+        id="mid-journey-info">
+        <h2 class="text-center pt-3">Mid Journey</h2>
+        <p class="text-start text-wrap py-3 flex-grow-1">
+            In varius curabitur, integer vulputate habitasse nam volutpat tempor
+            diam consectetur amet. Vestibulum lorem, consequat lectus, elementum
+            massa donec ut.
+        </p>
+        <a href="https://openai.com/index/dall-e-3/" class="text-end text-decoration-none text-info pb-3">
+            Read More
+        </a>
     </div>
 
-    <div class="d-flex flex-row justify-content-evenly" id="body-card">
-        <div class="d-flex flex-column" id="body-dalle-card">
-            <img src="/img/dalle.webp" alt="DALL-E Logo" />
-        </div>
+    <img src="/img/dalle.webp" alt="DALL-E Logo" id="mid-journey-card" />
+</div>
 
-        <div class="d-flex flex-column px-5" id="body-midjourney-card">
-            <img src="/img/midjourney.webp" alt="MidJourney Logo" />
-        </div>
+<div class="d-flex flex-row justify-content-evenly text-light pb-3" id="home-page-body-third-middle">
+    <img src="/img/dalle.webp" alt="DALL-E Logo" id="microsoft-designer-card" />
+    <img src="/img/midjourney.webp" alt="Mid Journey Logo" class="px-3" id="microsoft-designer-card" />
 
-        <div class="d-flex flex-column align-items-center justify-content-center" id="body-info">
-            <h2>AI Creative Art</h2>
-            <p>Euismod, viverra efficitur odio, elementum tempor vitae tempus habitasse elementum.</p>
-            <p>Read More</p> <!-- TODO: click button event by JS here -->
-        </div>
-    </div>
-
-    <div class="d-flex flex-row justify-content-evenly" id="body-card">
-        <div class="d-flex flex-column align-items-center justify-content-center" id="body-info">
-            <h2>AI Creative Art</h2>
-            <p>Euismod, viverra efficitur odio, elementum tempor vitae tempus habitasse elementum.</p>
-            <p>Read More</p> <!-- TODO: click button event by JS here -->
-        </div>
-
-        <div class="d-flex flex-column px-5" id="body-dalle-card">
-            <img src="/img/dalle.webp" alt="DALL-E Logo" />
-        </div>
-
-        <div class="d-flex flex-column" id="body-midjourney-card">
-            <img src="/img/midjourney.webp" alt="MidJourney Logo" />
-        </div>
-    </div>
-
-    <div class="d-flex flex-column align-items-center" id="body-prompt">
-        <h2>Upload AI Images</h2>
-        <p>Please <a href="#">login</a> or <a href="#">register</a> to upload your AI images</p>
+    <div class="d-flex flex-column border border-light border-3 rounded-3 px-3 bg-dark flex-grow-1"
+        id="microsoft-designer-info">
+        <h2 class="text-center pt-3">Microsoft Designer</h2>
+        <p class="text-start text-wrap py-3 flex-grow-1">
+            In varius curabitur, integer vulputate habitasse nam volutpat tempor
+            diam consectetur amet. Vestibulum lorem, consequat lectus, elementum
+            massa donec ut.
+        </p>
+        <a href="https://openai.com/index/dall-e-3/" class="text-end text-decoration-none text-info pb-3">
+            Read More
+        </a>
     </div>
 </div>
 
-<div class="d-flex flex-row justify-content-evenly align-items-center flex-wrap" id="footer-content">
+<!-- <div class="d-flex flex-row justify-content-evenly align-items-center flex-wrap" id="home-page-body-footer">
     <a
         href="http://blv.fih.mybluehost.me/artificial-intelligence/ai-for-nlp/artificial-intelligence-visual-art-redefining-creativity/">
         Background source: (Sami, 2023)
@@ -84,4 +86,4 @@ ViewData["Title"] = "Home Page";
         href="https://www.sdpnoticias.com/tecnologia/midjourney-ya-no-es-gratis-esta-seria-la-razon-por-la-que-ahora-pagas-por-usar-inteligencia-artificial/">
         2nd AI Image Source: (Luices, 2023)
     </a>
-</div>
+</div> -->

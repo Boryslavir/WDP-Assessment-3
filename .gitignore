@@ -112,3 +112,8 @@ nunit-*.xml
 
 # Other folder ingores
 *.db
+
+
+# Sqlite WAL files
+*.db-shm
+*.db-wal

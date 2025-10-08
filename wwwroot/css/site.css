@@ -50,41 +50,31 @@ body {
     color: white;
 }
 
-#header-content,
-#footer-content {
-    font-family: 'Anton', sans-serif;
+#home-page-body-header,
+#home-page-body-first-middle,
+#home-page-body-second-middle,
+#home-page-body-third-middle,
+#home-page-body-footer {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.25rem;
 }
 
-#header-content {
-    font-size: 2.5rem;
+#home-page-body-first-middle #dalle-info h2,
+#home-page-body-first-middle #dalle-info p,
+#home-page-body-first-middle #dalle-info a,
+#home-page-body-second-middle #mid-journey-info a,
+#home-page-body-second-middle #mid-journey-info h2,
+#home-page-body-second-middle #mid-journey-info p,
+#home-page-body-third-middle #microsoft-designer-info h2,
+#home-page-body-third-middle #microsoft-designer-info p,
+#home-page-body-third-middle #microsoft-designer-info a {
+    font-size: 1.125rem;
+    line-height: 1.5;
 }
 
-#body-description,
-#body-card {
-    font-family: 'Monsterrat', sans-serif;
-    padding: 2vw;
-}
-
-#body-card #body-info p {
-    color: coral;
-}
-
-#body-card img {
-    width: 100%;
-    max-width: 1080px;
+#home-page-body-first-middle img,
+#home-page-body-second-middle img,
+#home-page-body-third-middle img {
+    max-width: 35%;
     height: auto;
-}
-
-#body-card #body-info,
-#body-card img {
-    border: 0.05rem solid white;
-}
-
-#body-card #body-dalle-card p,
-#body-card #body-midjourney-card p {
-    background-color: coral;
-}
-
-#body-prompt a {
-    text-decoration: none;
 }

@@ -11,8 +11,9 @@
         Using the CDN link instead of the bundled Boostrap files that come with
         the template (usually very outdated version).
 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+        crossorigin="anonymous">
 
     <!-- Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
@@ -23,19 +24,25 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar bg-dark" data-bs-theme="dark">
-            <div class="container-fluid">
-                <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">GenAI</a>
-                <div class="d-flex flex-row flex-grow-1">
-                    <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    <a class="navbar-brand text-light" asp-area="" asp-controller="AIImage" asp-action="Index">AI
-                        Image</a>
-                    <a class="navbar-brand text-light" asp-area="" asp-controller="Home"
-                        asp-action="Contact">Contact</a>
-                </div>
-                <partial name="_LoginPartial" />
+    <header class="sticky-top">
+        <nav class="navbar bg-dark-subtle border-bottom border-light border-3" data-bs-theme="dark">
+            <a class="navbar-brand text-dark-emphasis mx-3" asp-area="" asp-controller="Home" asp-action="Index">
+                GenAI
+            </a>
+
+            <div class="d-flex flex-row justify-content-center">
+                <a class="navbar-brand text-dark-emphasis mx-3" asp-area="" asp-controller="Home" asp-action="Index">
+                    Home
+                </a>
+                <a class="navbar-brand text-dark-emphasis mx-3" asp-area="" asp-controller="AIImage" asp-action="Index">
+                    AI Image
+                </a>
+                <a class="navbar-brand text-dark-emphasis mx-3" asp-area="" asp-controller="Home" asp-action="Contact">
+                    Contact
+                </a>
             </div>
+
+            <partial name="_LoginPartial" />
         </nav>
     </header>
 
@@ -44,13 +51,13 @@
     Microsoft approach it, meh...)
 -->
     <div class="container-fluid" id="general-body-element">
-        <main role="main" class="pb-3">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer>
-        <nav class="navbar bg-dark" data-bs-theme="dark">
+    <footer class="fixed-bottom">
+        <nav class="navbar bg-dark-subtle border-top border-light border-3" data-bs-theme="dark">
             <div class="container">
                 <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                 <a class="navbar-brand text-light" asp-area="" asp-controller="AIImage" asp-action="Index">AI
@@ -73,12 +80,12 @@
         Using the CDN link instead of the bundled Boostrap files that come with
         the template (usually very outdated version).
 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw=="
         crossorigin="anonymous"></script>
 
     <!-- Custom JS for some unique pages -->
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- <script src="~/js/site.js" asp-append-version="true"></script> -->
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
