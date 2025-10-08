@@ -2,9 +2,9 @@
 ViewData["Title"] = "Home Page";
 }
 
-<div class="d-flex flex-column align-items-center text-light text-center" id="home-page-body-header">
-    <h1 class="pt-3">Generative Artificial Intelligence (Gen AI)</h1>
-    <p class="py-3">
+<div class="d-flex flex-column align-items-center text-light text-center py-5" id="home-page-body-header">
+    <h1 class="fw-bold">Generative Artificial Intelligence (Gen AI)</h1>
+    <p class="fw-bold">
         Artificial intelligence visual art, or AI art, is visual artwork
         generated (or enhanced) through the use of artificial intelligence (AI)
         programs. Automated art has been created since ancient times. The field
@@ -13,7 +13,7 @@ ViewData["Title"] = "Home Page";
         was founded.
     </p>
     <a href="https://en.wikipedia.org/wiki/Artificial_intelligence_visual_art"
-        class="fst-italic text-decoration-none text-info pb-5">
+        class="fst-italic text-decoration-none text-info fw-bold">
         (Wikipedia contributors, 2025)
     </a>
 </div>
@@ -54,7 +54,7 @@ ViewData["Title"] = "Home Page";
     <img src="/img/dalle.webp" alt="DALL-E Logo" id="mid-journey-card" />
 </div>
 
-<div class="d-flex flex-row justify-content-evenly text-light pb-3" id="home-page-body-third-middle">
+<div class="d-flex flex-row justify-content-evenly text-light" id="home-page-body-third-middle">
     <img src="/img/dalle.webp" alt="DALL-E Logo" id="microsoft-designer-card" />
     <img src="/img/midjourney.webp" alt="Mid Journey Logo" class="px-3" id="microsoft-designer-card" />
 
@@ -70,6 +70,21 @@ ViewData["Title"] = "Home Page";
             Read More
         </a>
     </div>
+</div>
+
+<div class="d-flex flex-column align-items-center text-light text-center py-5" id="home-page-body-footer">
+    <h1 class="fw-bold">Upload AI Images</h1>
+    <p class="fw-bold">
+        Please
+        <a asp-area="Identity" asp-page="/Account/Login" class="text-decoration-none text-info">
+            login
+        </a>
+        or
+        <a asp-area="Identity" asp-page="/Account/Register" class="text-decoration-none text-info">
+            register
+        </a>
+        to upload your AI images
+    </p>
 </div>
 
 <!-- <div class="d-flex flex-row justify-content-evenly align-items-center flex-wrap" id="home-page-body-footer">
