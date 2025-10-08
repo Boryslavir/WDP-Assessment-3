@@ -1,14 +1,14 @@
 @model WDP_Assessment_3.Models.AIImage
 
 @{
-    ViewData["Title"] = "Edit";
+ViewData["Title"] = "Edit";
 }
 
 <h1>Edit</h1>
 
 <h4>AIImage</h4>
 <hr />
-<div class="row">
+<div class="row text-white">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -40,7 +40,8 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="canIncreaseLike" /> @Html.DisplayNameFor(model => model.canIncreaseLike)
+                    <input class="form-check-input" asp-for="canIncreaseLike" /> @Html.DisplayNameFor(model =>
+                    model.canIncreaseLike)
                 </label>
             </div>
             <div class="form-group">
@@ -55,5 +56,5 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
