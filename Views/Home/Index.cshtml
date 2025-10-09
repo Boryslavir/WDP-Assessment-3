@@ -1,115 +1,115 @@
-﻿@{
-ViewData["Title"] = "Home Page";
-}
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
 
-<div class="d-flex flex-column align-items-center text-light text-center py-5" id="home-page-body-header">
-    <h1 class="fw-bold">Artificial Intelligence in Creative Arts (AI art)</h1>
-    <p class="fw-bold">
-        Artificial intelligence visual art, or AI art, is visual artwork
-        generated (or enhanced) through the use of artificial intelligence (AI)
-        programs. Automated art has been created since ancient times. The field
-        of artificial intelligence was founded in the 1950s, and artists began
-        to create art with artificial intelligence shortly after the discipline
-        was founded.
-    </p>
-    <a href="https://en.wikipedia.org/wiki/Artificial_intelligence_visual_art"
-        class="fst-italic text-decoration-none text-info fw-bold">
-        (Wikipedia contributors, 2025)
-    </a>
-</div>
+    @{
+    ViewData["Title"] = "Home Page";
+    }
 
-<div class="d-flex flex-row justify-content-evenly text-light" id="home-page-body-first-middle">
-    <div class="d-flex flex-column border border-light border-3 rounded-3 px-3 bg-dark flex-grow-1" id="dalle-info">
-        <h2 class="text-center pt-3">DALL-E 3</h2>
-        <p class="text-start text-wrap py-3 flex-grow-1">
-            DALL-E 3 produces higher quality, more accurate images from text
-            prompts compared to its predecessors, with improved understanding of
-            nuanced descriptions and better handling of text within images.
+    <div class="d-flex flex-column align-items-center text-light text-center py-5" id="home-page-body-header">
+        <h1 class="fw-bold">Artificial Intelligence in Creative Arts (AI art)</h1>
+        <p class="fw-bold">
+            Artificial intelligence visual art, or AI art, is visual artwork
+            generated (or enhanced) through the use of artificial intelligence (AI)
+            programs. Automated art has been created since ancient times. The field
+            of artificial intelligence was founded in the 1950s, and artists began
+            to create art with artificial intelligence shortly after the discipline
+            was founded.
         </p>
-        <div class="d-inline-flex flex-row justify-content-end pb-3">
-            <a href="https://openai.com/index/dall-e-3/" class="btn btn-primary">
-                Read More
-            </a>
-        </div>
-    </div>
-
-    <img src="/img/dalle-1.webp" alt="DALL-E Logo" id="dalle-card" class="px-3" />
-    <img src="/img/dalle-2.webp" alt="DALL-E Logo" id="dalle-card" />
-</div>
-
-<div class="d-flex flex-row justify-content-evenly text-light py-5" id="home-page-body-second-middle">
-    <img src="/img/mid-journey-1.webp" alt="Mid Journey Logo" id="mid-journey-card" />
-
-    <div class="d-flex flex-column border border-light border-3 rounded-3 px-3 bg-dark flex-grow-1 mx-3"
-        id="mid-journey-info">
-        <h2 class="text-center pt-3">Mid Journey</h2>
-        <p class="text-start text-wrap py-3 flex-grow-1">
-            Mid Journey has gained recognition for its distinctive visual style
-            that often emphasizes dramatic lighting, rich colors, and painterly
-            qualities. The service operates on a subscription model and has
-            progressed through multiple versions, with each iteration improving
-            image quality, prompt adherence, and resolution.
-        </p>
-        <div class="d-inline-flex flex-row justify-content-end pb-3">
-            <a href="https://www.midjourney.com/home" class="btn btn-primary">
-                Read More
-            </a>
-        </div>
-    </div>
-
-    <img src="/img/mid-journey-2.webp" alt="Mid Journey Logo" id="mid-journey-card" />
-</div>
-
-<div class="d-flex flex-row justify-content-evenly text-light" id="home-page-body-third-middle">
-    <img src="/img/microsoft-designer-2.webp" alt="Microsoft Designer Logo" id="microsoft-designer-card" />
-    <img src="/img/microsoft-designer-1.webp" alt="Microsoft Designer Logo" id="microsoft-designer-card" class="px-3" />
-
-    <div class="d-flex flex-column border border-light border-3 rounded-3 px-3 bg-dark flex-grow-1"
-        id="microsoft-designer-info">
-        <h2 class="text-center pt-3">Microsoft Designer</h2>
-        <p class="text-start text-wrap py-3 flex-grow-1">
-            Microsoft Designer is designed to help users create
-            professional-looking social media posts, invitations, digital
-            postcards, graphics, and other visual content. It offers templates,
-            automatic layout suggestions, and AI-powered features including
-            background removal and image editing.
-        </p>
-        <div class="d-inline-flex flex-row justify-content-end pb-3">
-            <a href="https://microsoft.design/articles/ai-powered-creativity-with-microsoft-designer/"
-                class="btn btn-primary">
-                Read More
-            </a>
-        </div>
-    </div>
-</div>
-
-<div class="d-flex flex-column align-items-center text-light text-center py-5" id="home-page-body-footer">
-    <h1 class="fw-bold">Upload AI Images</h1>
-    <p class="fw-bold">
-        Please
-        <a asp-area="Identity" asp-page="/Account/Login" class="text-decoration-none text-info">
-            login
+        <a href="https://en.wikipedia.org/wiki/Artificial_intelligence_visual_art"
+            class="fst-italic text-decoration-none text-info fw-bold">
+            (Wikipedia contributors, 2025)
         </a>
-        or
-        <a asp-area="Identity" asp-page="/Account/Register" class="text-decoration-none text-info">
-            register
+    </div>
+
+    <div class="d-flex flex-row justify-content-evenly text-light" id="home-page-body-first-middle">
+        <div class="d-flex flex-column border border-light border-3 rounded-3 px-3 bg-dark flex-grow-1" id="dalle-info">
+            <h2 class="text-center pt-3">DALL-E 3</h2>
+            <p class="text-start text-wrap py-3 flex-grow-1">
+                DALL-E 3 produces higher quality, more accurate images from text
+                prompts compared to its predecessors, with improved understanding of
+                nuanced descriptions and better handling of text within images.
+            </p>
+            <div class="d-inline-flex flex-row justify-content-end pb-3">
+                <a href="https://openai.com/index/dall-e-3/" class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+
+        <img src="/img/dalle-1.webp" alt="DALL-E Logo" id="dalle-card" class="px-3" />
+        <img src="/img/dalle-2.webp" alt="DALL-E Logo" id="dalle-card" />
+    </div>
+
+    <div class="d-flex flex-row justify-content-evenly text-light py-5" id="home-page-body-second-middle">
+        <img src="/img/mid-journey-1.webp" alt="Mid Journey Logo" id="mid-journey-card" />
+
+        <div class="d-flex flex-column border border-light border-3 rounded-3 px-3 bg-dark flex-grow-1 mx-3"
+            id="mid-journey-info">
+            <h2 class="text-center pt-3">Mid Journey</h2>
+            <p class="text-start text-wrap py-3 flex-grow-1">
+                Mid Journey has gained recognition for its distinctive visual style
+                that often emphasizes dramatic lighting, rich colors, and painterly
+                qualities. The service operates on a subscription model and has
+                progressed through multiple versions, with each iteration improving
+                image quality, prompt adherence, and resolution.
+            </p>
+            <div class="d-inline-flex flex-row justify-content-end pb-3">
+                <a href="https://www.midjourney.com/home" class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+
+        <img src="/img/mid-journey-2.webp" alt="Mid Journey Logo" id="mid-journey-card" />
+    </div>
+
+    <div class="d-flex flex-row justify-content-evenly text-light" id="home-page-body-third-middle">
+        <img src="/img/microsoft-designer-2.webp" alt="Microsoft Designer Logo" id="microsoft-designer-card" />
+        <img src="/img/microsoft-designer-1.webp" alt="Microsoft Designer Logo" id="microsoft-designer-card"
+            class="px-3" />
+
+        <div class="d-flex flex-column border border-light border-3 rounded-3 px-3 bg-dark flex-grow-1"
+            id="microsoft-designer-info">
+            <h2 class="text-center pt-3">Microsoft Designer</h2>
+            <p class="text-start text-wrap py-3 flex-grow-1">
+                Microsoft Designer is designed to help users create
+                professional-looking social media posts, invitations, digital
+                postcards, graphics, and other visual content. It offers templates,
+                automatic layout suggestions, and AI-powered features including
+                background removal and image editing.
+            </p>
+            <div class="d-inline-flex flex-row justify-content-end pb-3">
+                <a href="https://microsoft.design/articles/ai-powered-creativity-with-microsoft-designer/"
+                    class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+
+    @if (SignInManager.IsSignedIn(User))
+    {
+    <div class="d-flex flex-column align-items-center text-light text-center py-5" id="home-page-footer">
+        <h1 class="fw-bold">List of AI Images</h1>
+        <a asp-area="" asp-controller="AIImage" asp-action="Create" class="text-decoration-none text-info fw-bold">
+            Click here to upload a new AI image
         </a>
-        to upload your AI images
-    </p>
-</div>
-
-<!-- <div class="d-flex flex-row justify-content-evenly align-items-center flex-wrap" id="home-page-body-footer">
-    <a
-        href="http://blv.fih.mybluehost.me/artificial-intelligence/ai-for-nlp/artificial-intelligence-visual-art-redefining-creativity/">
-        Background source: (Sami, 2023)
-    </a>
-
-    <a href="https://aipure.ai/it/articles/dall-e-3-review-revolutionizing-ai-image-generation">
-        1st AI Image Source: (Dickson, 2024)
-    </a>
-
-    <a
-        href="https://www.sdpnoticias.com/tecnologia/midjourney-ya-no-es-gratis-esta-seria-la-razon-por-la-que-ahora-pagas-por-usar-inteligencia-artificial/">
-        2nd AI Image Source: (Luices, 2023)
-    </a>
-</div> -->
+    </div>
+    }
+    else
+    {
+    <div class="d-flex flex-column align-items-center text-light text-center py-5" id="home-page-footer">
+        <h1 class="fw-bold">Upload AI Images</h1>
+        <p class="fw-bold">
+            Please
+            <a asp-area="Identity" asp-page="/Account/Login" class="text-decoration-none text-info">
+                login
+            </a>
+            or
+            <a asp-area="Identity" asp-page="/Account/Register" class="text-decoration-none text-info">
+                register
+            </a>
+            to upload your AI images
+        </p>
+    </div>
+    }

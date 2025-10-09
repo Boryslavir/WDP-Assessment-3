@@ -44,14 +44,6 @@ a {
     background: transparent url('./../img/home-background.webp') center 50% no-repeat padding-box border-box fixed;
 }
 
-#header-content,
-#body-description,
-#body-card,
-#body-prompt,
-#footer-content {
-    color: white;
-}
-
 #home-page-body-header,
 #home-page-body-first-middle,
 #home-page-body-second-middle,
