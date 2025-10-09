@@ -1,16 +1,22 @@
 @model IEnumerable<WDP_Assessment_3.Models.AIImage>
     @using Microsoft.AspNetCore.Identity
     @inject SignInManager<IdentityUser> SignInManager
+
+        @{
+        ViewData["Title"] = "AI Image Home Page";
+        }
+
         @if (SignInManager.IsSignedIn(User))
         {
         <div class="d-flex flex-column align-items-center text-light text-center" id="image-page-body-login">
-            <h1 class="fw-bold">Upload AI Images</h1>
+            <h1 class="fw-bold">List of AI Images</h1>
             <a asp-area="" asp-controller="AIImage" asp-action="Create" class="text-decoration-none text-info fw-bold">
                 Click here to upload a new AI image
             </a>
         </div>
 
-        @foreach (var item in Model) {
+        @foreach (var item in Model)
+        {
         <div class="d-inline-flex flex-row justify-contents-evenly flex-wrap py-5">
             <a asp-action="Details" asp-route-id="@item.Id"
                 class="text-info text-center border border-light border-3 rounded-3 p-5 bg-dark">
@@ -18,61 +24,6 @@
             </a>
         </div>
         }
-
-        <!-- <table class="table text-white">
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Prompt)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ImageGenerator)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.UploadDate)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Filename)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Like)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.canIncreaseLike)
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model) {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Prompt)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ImageGenerator)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.UploadDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Filename)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Like)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.canIncreaseLike)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                </tr>
-                }
-            </tbody>
-        </table> -->
         }
         else
         {
