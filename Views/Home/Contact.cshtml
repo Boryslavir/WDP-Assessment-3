@@ -1,14 +1,41 @@
 @{
 ViewData["Title"] = "Contact";
+
+string[] referenceSource =
+{
+// Background image
+"http://blv.fih.mybluehost.me/artificial-intelligence/ai-for-nlp/artificial-intelligence-visual-art-redefining-creativity/",
+// All AI logo images
+"https://aipure.ai/it/articles/dall-e-3-review-revolutionizing-ai-image-generation",
+"https://www.sdpnoticias.com/tecnologia/midjourney-ya-no-es-gratis-esta-seria-la-razon-por-la-que-ahora-pagas-por-usar-inteligencia-artificial/",
+"https://www.01net.com/astuces/microsoft-designer-comment-generer-des-creations-graphiques-a-laide-de-quelques-mots.html",
+// Icon usage
+"https://fontawesome.com/",
+// Font usage
+"https://fonts.google.com/knowledge/glossary/system_font_web_safe_font"
+};
 }
-<div class="d-flex flex-column align-items-center text-light">
-    <h1 class="py-5">@ViewData["Title"] & About</h1>
+<div class="d-flex flex-column align-items-center text-light" id="contact-page">
+    <h1 class="py-5 fw-bold">@ViewData["Title"] & About</h1>
 
     <div class="d-flex flex-row pb-5">
         <div class="d-flex flex-column border border-light border-3 rounded-3 bg-dark">
-            <h2>Contact Us</h2>
-            <hr class="border border-success border-3 rounded-5 w-75 h-auto">
-            <p class="text-wrap">
+            <h2 class="text-center pt-3">About Us</h2>
+            <hr class="border border-light border-2 opacity-100 mw-100 h-auto">
+            <p class="text-start text-wrap p-3">
+                This website provides an review on the use of AI in Creative
+                Arts and was created as partial fulfillment of the assessment
+                requirements of Web Design and Programming at the University of
+                Canberra.<br />
+                Also, it is built on the ASP.NET CORE framework and employs
+                Bootstrap responsive design techniques.
+            </p>
+        </div>
+
+        <div class="d-flex flex-column border border-light border-3 rounded-3 bg-dark mx-5">
+            <h2 class="text-center pt-3">Contact Us</h2>
+            <hr class="border border-light border-2 opacity-100 mw-100 h-auto">
+            <p class="text-start text-wrap p-3">
                 This website is developed by Bing Tran. To get in contact please
                 email
                 <a href="mailto:u3295557@uni.canberra.edu.au">
@@ -17,31 +44,48 @@ ViewData["Title"] = "Contact";
             </p>
         </div>
 
-        <div class="d-flex flex-column border border-light border-3 rounded-3 bg-dark mx-5">
-            <h2>About Us</h2>
-            <hr class="border border-success border-3 rounded-5 w-75 h-auto">
-            <p class="text-wrap">
-                This website provides an review on the use of AI in Creative Arts and was created as
-                partial fulfillment of the assessment requirements of Web Design and Programming at the
-                University of Canberra.
-            </p>
-            <p class="text-wrap">
-                This site is built on the ASP.NET CORE framework and employs Bootstrap responsive design
-                techniques.
-            </p>
-        </div>
-
         <div class="d-flex flex-column border border-light border-3 rounded-3 bg-dark">
-            <h2>Copyright</h2>
-            <hr class="border border-success border-3 rounded-5 w-75 h-auto">
-            <p class="text-wrap">
-                All images used in this website were downloaded from various link [insert here]
-            </p>
-            <p class="text-wrap">
-                The icons for the footer from font awesome. [insert here]
-            </p>
-            <p class="text-wrap">
-                The Anton font used for headers from Google Fonts. [insert here]
+            <h2 class="text-center pt-3">Copyright</h2>
+            <hr class="border border-light border-2 opacity-100 mw-100 h-auto">
+            <p class="text-start text-wrap p-3">
+                Background image were downloaded from
+                <a href="@(referenceSource[0])">
+                    (Sami, 2023).
+                </a>
+                <br />
+
+                DALL-E 3 logo image were downloaded from
+                <a href="@(referenceSource[1])">
+                    (Dickson, 2024).
+                </a>
+                <br />
+
+                Mid Journey logo image were downloaded from
+                <a href="@(referenceSource[2])">
+                    (Luices, 2023).
+                </a>
+                <br />
+
+                Microsoft Designer logo image were downloaded from
+                <a href="@(referenceSource[3])">
+                    (Ondet, 2023).
+                </a>
+                <br />
+
+                The icons for the footer were taken from
+                <a href="@(referenceSource[4])">
+                    Font Awesome.
+                </a>
+                <br />
+
+
+                Website fonts are set based on the user's current OS. The reason
+                for doing so can be read from the
+                <a href="@(referenceSource[5])">
+                    Google Fonts
+                </a>
+                post
+                <br />
             </p>
         </div>
     </div>
