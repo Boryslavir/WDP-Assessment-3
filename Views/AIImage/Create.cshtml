@@ -4,56 +4,64 @@
 ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
 
-<h4>AIImage</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Prompt" class="control-label text-white"></label>
-                <input asp-for="Prompt" class="form-control" />
-                <span asp-validation-for="Prompt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImageGenerator" class="control-label text-white"></label>
-                <input asp-for="ImageGenerator" class="form-control" />
-                <span asp-validation-for="ImageGenerator" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UploadDate" class="control-label text-white"></label>
-                <input asp-for="UploadDate" class="form-control" />
-                <span asp-validation-for="UploadDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Filename" class="control-label text-white"></label>
-                <input asp-for="Filename" class="form-control" />
-                <span asp-validation-for="Filename" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Like" class="control-label text-white"></label>
-                <input asp-for="Like" class="form-control" />
-                <span asp-validation-for="Like" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label text-white">
-                    <input class="form-check-input" asp-for="canIncreaseLike" /> @Html.DisplayNameFor(model
-                    =>
-                    model.canIncreaseLike)
-                </label>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="d-flex flex-column text-light" id="create-page">
+    <div class="d-flex flex-row justify-content-center pb-3">
+        <h1>Upload AI Image</h1>
+    </div>
+
+    <div class="d-flex flex-row align-items-center px-3">
+        <div class="flex-fill pe-3">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Prompt" class="control-label text-light"></label>
+                    <input asp-for="Prompt" class="form-control" />
+                    <span asp-validation-for="Prompt" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageGenerator" class="control-label text-light"></label>
+                    <input asp-for="ImageGenerator" class="form-control" />
+                    <span asp-validation-for="ImageGenerator" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UploadDate" class="control-label text-light"></label>
+                    <input asp-for="UploadDate" class="form-control" />
+                    <span asp-validation-for="UploadDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Filename" class="control-label text-light"></label>
+                    <input asp-for="Filename" class="form-control" aria-describedby="FilenameInstruction" />
+                    <div id="FilenameInstruction" class="form-text text-warning fw-bold">
+                        Make sure the file name matches the image generator
+                        name. Otherwise, no image will be seen after the post
+                        created.
+                    </div>
+                    <span asp-validation-for="Filename" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="Like" class="control-label text-light"></label>
+                    <input asp-for="Like" class="form-control" />
+                    <span asp-validation-for="Like" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label text-light">
+                        <input class="form-check-input" asp-for="canIncreaseLike" />
+                        @Html.DisplayNameFor(model => model.canIncreaseLike)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+
+        <!-- Source: https://arstechnica.com/information-technology/2023/05/ibm-pauses-hiring-around-7800-roles-that-could-be-replaced-by-ai/ -->
+        <img src="/img/ibm.webp" alt="IBM Logo" />
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
 @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
