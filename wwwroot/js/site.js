@@ -93,3 +93,23 @@ addCardInfo(
     '(Dasher, 2024)',
     '.microsoft-designer-card-2-info',
 );
+
+document.addEventListener("DOMContentLoaded", () => {
+    const aiDivs = document.querySelectorAll("[data-image]"); // select all divs with data-image
+
+    aiDivs.forEach(div => {
+        const imageFile = div.dataset.image;
+        div.style.transition = "background 2s ease";
+
+        div.addEventListener("mouseenter", () => {
+            div.style.backgroundImage = `url('/img/${imageFile}')`;
+            div.style.backgroundPosition = "center";
+            div.style.backgroundSize = "100%";
+            div.style.backgroundRepeat = "no-repeat";
+        });
+
+        div.addEventListener("mouseleave", () => {
+            div.style.backgroundImage = ""; // remove background
+        });
+    });
+});

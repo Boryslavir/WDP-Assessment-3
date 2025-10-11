@@ -6,13 +6,13 @@ ViewData["Title"] = "Create Page";
 
 
 <div class="d-flex flex-column text-light" id="create-page">
-    <div class="d-flex flex-row justify-content-center pb-3">
-        <h1>Upload AI Image</h1>
+    <div class="d-flex flex-row justify-content-center py-5">
+        <h1 class="fw-bold">Upload AI Image</h1>
     </div>
 
     <div class="d-flex flex-row align-items-center px-3">
         <div class="flex-fill pe-3">
-            <form asp-action="Create">
+            <form asp-action="Create" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="Prompt" class="control-label text-light"></label>
@@ -30,20 +30,15 @@ ViewData["Title"] = "Create Page";
                     <span asp-validation-for="UploadDate" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Filename" class="control-label text-light"></label>
-                    <input asp-for="Filename" class="form-control" aria-describedby="FilenameInstruction" />
-                    <div id="FilenameInstruction" class="form-text text-warning fw-bold">
-                        Make sure the file name matches the image generator
-                        name. Otherwise, no image will be seen after the post
-                        created.
-                    </div>
-                    <span asp-validation-for="Filename" class="text-danger"></span>
-
-                </div>
-                <div class="form-group">
                     <label asp-for="Like" class="control-label text-light"></label>
                     <input asp-for="Like" class="form-control" />
                     <span asp-validation-for="Like" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageFile" class="control-label text-light"></label>
+                    <input asp-for="ImageFile" class="form-control" type="file"
+                        aria-describedby="FilenameInstruction" />
+                    <span asp-validation-for="ImageFile" class="text-danger"></span>
                 </div>
                 <div class="form-group form-check">
                     <label class="form-check-label text-light">

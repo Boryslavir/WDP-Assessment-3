@@ -1,4 +1,6 @@
 @model WDP_Assessment_3.Models.AIImage
+@using System.Globalization
+@using System.IO
 
 @{
 ViewData["Title"] = "Details Page";
@@ -7,8 +9,9 @@ ViewData["Title"] = "Details Page";
 <div class="d-flex flex-column align-items-center text-light" id="details-page">
     <h1 class="pb-5 fw-bold">@Html.DisplayFor(model => model.ImageGenerator) AI Image</h1>
 
+
     <div class="d-flex flex-row text-light border border-light border-3 rounded-3 bg-dark">
-        <img src="/img/@(Html.DisplayFor(model => model.Filename))-generated-image-@(Model.Id).webp"
+        <img src="/img/@(Html.DisplayFor(model => model.Filename))"
             alt="AI Image for @(Html.DisplayFor(model => model.Filename))" class="pe-3" />
 
         <div class="d-flex flex-column text-light ps-3 flex-grow-1">

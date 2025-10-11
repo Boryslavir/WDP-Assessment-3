@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WDP_Assessment_3.Data;
 using WDP_Assessment_3.Models;
@@ -16,10 +15,15 @@ namespace WDP_Assessment_3.Controllers
     public class AIImageController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public AIImageController(ApplicationDbContext context)
+        public AIImageController(
+                ApplicationDbContext context,
+                IWebHostEnvironment webHostEnvironment
+        )
         {
             _context = context;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         // GET: AIImage
@@ -59,8 +63,28 @@ namespace WDP_Assessment_3.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "admin, user")]
-        public async Task<IActionResult> Create([Bind("Id,Prompt,ImageGenerator,UploadDate,Filename,Like,canIncreaseLike")] AIImage aIImage)
+        public async Task<IActionResult> Create([Bind("Id,Prompt,ImageGenerator,Like,canIncreaseLike")] AIImage aIImage, IFormFile ImageFile)
         {
+            aIImage.UploadDate = DateTime.Now; // enforces current date and time by default
+
+            if (ImageFile != null && ImageFile.Length > 0)
+            {
+                // Build target file path
+                string uploadFolder = Path.Combine(_webHostEnvironment.WebRootPath, "img");
+                Directory.CreateDirectory(uploadFolder); // ensure folder have to exist
+
+                string uploadFilePath = Path.Combine(uploadFolder, ImageFile.FileName);
+
+                // Save file to 'wwwroot/img/'
+                using (var stream = new FileStream(uploadFilePath, FileMode.Create))
+                {
+                    await ImageFile.CopyToAsync(stream);
+                }
+
+                // Store filename in the database
+                aIImage.Filename = ImageFile.FileName;
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(aIImage);
@@ -90,10 +114,10 @@ namespace WDP_Assessment_3.Controllers
         // POST: AIImage/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "admin")]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Prompt,ImageGenerator,UploadDate,Filename,Like,canIncreaseLike")] AIImage aIImage)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Prompt,ImageGenerator,UploadDate,Filename,Like,canIncreaseLike")] AIImage aIImage, IFormFile ImageFile)
         {
             if (id != aIImage.Id)
             {
@@ -104,6 +128,33 @@ namespace WDP_Assessment_3.Controllers
             {
                 try
                 {
+                    // Handle file upload if a new file is provided
+                    if (ImageFile != null && ImageFile.Length > 0)
+                    {
+                        string uploadFolder = Path.Combine(_webHostEnvironment.WebRootPath, "img");
+                        Directory.CreateDirectory(uploadFolder); // ensure folder exists
+
+                        string uploadFilePath = Path.Combine(uploadFolder, ImageFile.FileName);
+
+                        using (var stream = new FileStream(uploadFilePath, FileMode.Create))
+                        {
+                            await ImageFile.CopyToAsync(stream);
+                        }
+
+                        // Update the filename in the database
+                        aIImage.Filename = ImageFile.FileName;
+                    }
+                    else
+                    {
+                        // Preserve the existing filename (so it doesn't get overwritten with null)
+                        var existingImage = await _context.AIImage.AsNoTracking()
+                            .FirstOrDefaultAsync(ai => ai.Id == id);
+                        if (existingImage != null)
+                        {
+                            aIImage.Filename = existingImage.Filename;
+                        }
+                    }
+
                     _context.Update(aIImage);
                     await _context.SaveChangesAsync();
                 }
@@ -122,6 +173,7 @@ namespace WDP_Assessment_3.Controllers
             }
             return View(aIImage);
         }
+
 
         // GET: AIImage/Delete/5
         [Authorize(Roles = "admin")]

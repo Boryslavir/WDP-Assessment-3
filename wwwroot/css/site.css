@@ -96,7 +96,8 @@ a {
 
 #home-page-body-first-middle .dalle-card-2 {
     /* It refuses to work if wrote in one-liner somehow */
-    background: transparent url('/img/dalle-2.webp') center;
+    background: transparent url('/img/dalle-2.webp');
+    background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
     background-origin: padding-box;
