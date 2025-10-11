@@ -82,7 +82,74 @@ a {
     line-height: 1.5;
 }
 
-#home-page-body-first-middle img,
+#home-page-body-first-middle .dalle-card-1 {
+    /* It refuses to work if wrote in one-liner somehow */
+    background-color: transparent;
+    background-image: url('/img/dalle-1.webp');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-attachment: scroll;
+}
+
+#home-page-body-first-middle .dalle-card-2 {
+    /* It refuses to work if wrote in one-liner somehow */
+    background: transparent url('/img/dalle-2.webp') center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-attachment: scroll;
+}
+
+#home-page-body-second-middle .mid-journey-card-1 {
+    /* It refuses to work if wrote in one-liner somehow */
+    background-color: transparent;
+    background-image: url('/img/mid-journey-1.webp');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-attachment: scroll;
+}
+
+#home-page-body-second-middle .mid-journey-card-2 {
+    /* It refuses to work if wrote in one-liner somehow */
+    background: transparent url('/img/mid-journey-2.webp');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-attachment: scroll;
+}
+
+#home-page-body-third-middle .microsoft-designer-card-1 {
+    /* It refuses to work if wrote in one-liner somehow */
+    background-color: transparent;
+    background-image: url('/img/microsoft-designer-1.webp');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-attachment: scroll;
+}
+
+#home-page-body-third-middle .microsoft-designer-card-2 {
+    /* It refuses to work if wrote in one-liner somehow */
+    background: transparent url('/img/microsoft-designer-2.webp');
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-attachment: scroll;
+}
+
 #home-page-body-second-middle img,
 #home-page-body-third-middle img,
 #details-page img,
