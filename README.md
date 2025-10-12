@@ -14,12 +14,12 @@ sqlite3.exe --version   # on Linux, it's 'sqlite3 --version'
 If it produces a red error message, then you must install the tools as stated. If not, you may skip this and process to next steps
 
 ## Step 2
-Open File Explorer (Linux users should already know what I'm mentioning about) and choose a desired location that you want to install the project. Then, left click on the navigation bar that have the name of the folder you chosen (e.g: '**Downloads/') and hit **Ctrl + C** keybind.
+Open File Explorer (Linux users should already know what I'm mentioning about) and choose a desired location that you want to install the project. Then, left click on the navigation bar that have the name of the folder you chosen (e.g: '**Downloads/**') and hit **Ctrl + C** keybind.
 
 After that, open the terminal again and run:
-```bash```
-cd <delete this and replace by hitting 'CTRL + V' keybind>
 ```bash
+cd <delete this and replace by hitting 'CTRL + V' keybind>
+```
 
 Then, you can clone/install the repository/project by typing
 ```bash
@@ -46,7 +46,7 @@ dotnet watch -v diag
 ```
 
 ### Step 3.2. Open the website using the Visual Studio Code
-Close the current terminal and open up Visual Studio Code. Hit **Ctrl + K** then **Ctrl + O** follow up straight away. Remember that I told you to take note on your desired install folder? Go to there and click on the **WDP-Assessment-3/** folder (remeber, CLICK ON IT ONLY). Hit the button that said `Open` or similar.
+Close the current terminal and open up Visual Studio Code. Hit **Ctrl + K** then **Ctrl + O** follow up straight away. Remember that I told you to take note on your desired install folder? Go to there and click on the **WDP-Assessment-3/** folder (remember, CLICK ON IT ONLY). Hit the button that said `Open` or similar.
 
 Then, open up the terminal (search it up on Google on how to do it if you don't know, it's very easy) and run the below command to get the website up and running
 ```bash
@@ -57,7 +57,7 @@ dotnet watch -v diag
 > [!NOTE]
 > From here, depends on which options you choose in `Step 3`, the step to run it is fairly similar to each other. I will assume that you choose to do the `Step 3.1.`
 
-If you ever go to the <AI Image> page, it would likely to raise an issue related to database. In that case, run the following command in sequences
+If you ever go to the {AI Image} page, it would likely to raise an issue related to database. In that case, run the following command in sequences
 ```bash
 dotnet tool install --global dotnet-ef
 dotnet-ef migrations add AIImage
